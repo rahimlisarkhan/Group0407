@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+/* .title2 {
+  font-size: 24px;
+  color: #333;
+  background-color: red;
+} */
+
+/* #title {
+  font-size: 24px;
+  color: #333;
+  background-color: red;
+} */
+
+/* HEADER */
+.subtitle {
+  color: red;
+  background-color: yellow;
+
+  font-size: 14px;
+  font-weight: 400; /* regular */
+}
+
+.subtitle2 {
+  background-color: green !important;
+}
+
+.box {
+  /* SIZE */
+  /* width: 1800px; */
+  /* width: 50%; */
+  width: 400px;
+  height: 100px;
+
+  /* BACKGROUND FAMILY */
+  background-color: blue;
+
+  /* SPACES */
+  /* margin-top: 200px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: 120px; */
+  margin: 20px 40px;
+
+  /* padding-top: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 10px; */
+
+  /* padding: 12px 3px 6px 9px; top right bottom left */
+  padding: 10px 12px;
+
+  /* TYPOGRAPHY */
+  color: red;
+  font-size: 32px;
+  font-weight: 700; /* bold */
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-style: italic; */
+  text-align: center;
+  /* text-decoration: line-through; */
+  text-transform: lowercase;
+}
+
+.box2 {
+  background-color: red;
+
+  /* width: auto;
+  height: auto; */
+
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+}
+
+/* h6 {
+  color: red;
+} */
+
+/* span {
+  color: red;
+} */
+
+.text-important {
+  color: red;
+  font-weight: 600;
+}
+
+/* p {
+  color: red;
+
+  & span {
+    color: blue;
+  }
+}
+
+p span {
+  color: blue;
+} */
+
+/* width = 332 + 60 + 8  */
+/* height = 132 + 60 + 8  */
+
+/* .parent {
+  width: 400px;
+  height: 200px;
+  background-color: #f9f926;
+  margin: 30px;
+  padding: 30px;
+
+  border-width: 4px;
+  border-style: dashed;
+  border-color: #2662f9;
+} */
+
+/* .parent .child {
+  color: #2662f9;
+} */

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1 id="infoTitle">Information Form</h1>
+    <form>
+      <div>
+        <label for="nameElaqe">Name:</label>
+        <br />
+        <input
+          id="nameElaqe"
+          type="text"
+          name="fullname"
+          placeholder="Adiniz..." />
+      </div>
+      <br />
+      <div>
+        <label for="sifreElaqe">Password:</label>
+        <br />
+        <input
+          id="sifreElaqe"
+          type="password"
+          name="password"
+          placeholder="Şifrəniz..." />
+      </div>
+
+      <br />
+      <div>
+        <label for="emailElaqe">Email:</label>
+        <br />
+        <input
+          id="emailElaqe"
+          type="email"
+          name="email"
+          placeholder="E-mailiniz..." />
+      </div>
+
+      <!-- CHECKBOX -->
+      <br />
+      <div>
+        <input type="checkbox" id="checkboxElaqe" name="checkbox" />
+        <label for="checkboxElaqe">I agree to the terms and conditions</label>
+      </div>
+
+      <!-- QUESTION: Checkbox elementi iki defe yazilib. Biri silinecekmi? -->
+      <br />
+      <div>
+        <div>
+          <input type="checkbox" id="question1Elaqe" name="checkbox" />
+          <label for="question1Elaqe">Variant 1</label>
+        </div>
+        <div>
+          <input type="checkbox" id="question2Elaqe" name="checkbox" />
+          <label for="question2Elaqe">Variant 2</label>
+        </div>
+        <div>
+          <input type="checkbox" id="question3Elaqe" name="checkbox" />
+          <label for="question3Elaqe">Variant 3</label>
+        </div>
+      </div>
+
+      <!-- RADIO -->
+      <br />
+      <div>
+        <p>Lorem ipsum</p>
+        <div>
+          <input type="radio" id="radio1Elaqe" name="radioGroup" />
+          <label for="radio1Elaqe">Option 1</label>
+        </div>
+        <div>
+          <input type="radio" id="radio2Elaqe" name="radioGroup" checked />
+          <label for="radio2Elaqe">Option 2</label>
+        </div>
+        <div>
+          <input type="radio" id="radio3Elaqe" name="radioGroup" />
+          <label for="radio3Elaqe">Option 3</label>
+        </div>
+      </div>
+
+      <br />
+      <div>
+        <p>Lorem ipsum 2</p>
+        <div>
+          <input
+            type="radio"
+            id="radio1ElaqeFerqli"
+            name="radioGroupFerqli"
+            checked />
+          <label for="radio1ElaqeFerqli">Option 1</label>
+        </div>
+        <div>
+          <input type="radio" id="radio2ElaqeFerqli" name="radioGroupFerqli" />
+          <label for="radio2ElaqeFerqli">Option 2</label>
+        </div>
+        <div>
+          <input type="radio" id="radio3ElaqeFerqli" name="radioGroupFerqli" />
+          <label for="radio3ElaqeFerqli">Option 3</label>
+        </div>
+      </div>
+
+      <!-- COLOR -->
+      <br />
+      <div>
+        <label for="colorElaqe">Color:</label>
+        <br />
+        <input id="colorElaqe" type="color" name="color" />
+      </div>
+
+      <!-- FILE -->
+      <br />
+      <div>
+        <label for="fileElaqe">File:</label>
+        <br />
+        <input id="fileElaqe" type="file" name="file" />
+      </div>
+
+      <!-- SELECT -->
+      <br />
+      <div>
+        <label for="selectElaqe">Select:</label>
+        <br />
+        <select id="selectElaqe" name="select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- DATETIME -->
+      <br />
+      <div>
+        <label for="datetimeElaqe">Date &amp; Time:</label>
+        <br />
+        <input id="datetimeElaqe" type="datetime-local" name="datetime" />
+      </div>
+
+      <!-- TEXTAREA -->
+      <br />
+      <div>
+        <label for="textareaElaqe">Message:</label>
+        <br />
+        <textarea
+          id="textareaElaqe"
+          name="message"
+          rows="5"
+          cols="30"
+          placeholder="Mesajınız..."></textarea>
+      </div>
+
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

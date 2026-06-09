@@ -1,0 +1,12 @@
+@import url('../general/reset.css');
+@import url('../general/font.css');
+@import url('../general/general.css');
+
+.about-info-card {
+  width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  /* background-color: green; */
+}

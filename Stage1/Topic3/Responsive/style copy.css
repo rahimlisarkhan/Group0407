@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: red;
+  height: 180px;
+
+  color: white;
+}
+
+.mobile-menu {
+  display: none;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 12px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+/* TABLET */
+@media screen and (max-width: 800px) {
+  .header {
+    background-color: blue;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 400px) {
+  .header {
+    /* background-color: green; */
+    height: 120px;
+  }
+}

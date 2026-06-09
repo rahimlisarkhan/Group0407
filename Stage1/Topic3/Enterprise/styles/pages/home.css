@@ -1,0 +1,152 @@
+@import url(../global/global.css);
+
+/* HEADER */
+.header {
+  height: 106px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-white);
+  z-index: 1000;
+}
+
+.btn-ham {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header_content {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  /* background-color: yellow; */
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-title {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: var(--font-poppins);
+  color: var(--primary-text-color);
+}
+
+.nav__list {
+  /* background-color: rgb(87, 87, 219); */
+
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  color: var(--primary-text-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* .nav__list .nav__item:last-child .nav__link {
+  color: var(--primary-color);
+} */
+
+.active {
+  color: var(--primary-color);
+}
+
+/* HERO */
+
+.hero {
+  padding: 48px 30px;
+
+  /* background-color: red; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-info {
+  width: 45%;
+  /* background-color: blue; */
+}
+
+.info-title {
+  font-weight: 700;
+  font-size: 60px;
+  font-family: var(--font-poppins);
+  color: var(--primary-text-color);
+  line-height: 80px;
+}
+
+.info-desc {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+
+  font-family: var(--font-poppins);
+  color: var(--secondary-color);
+
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  width: 55%;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .brand-title {
+    display: none;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .btn-ham {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-info {
+    width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-img {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .info-title {
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .info-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* @media screen and (max-width: 400px) {
+} */

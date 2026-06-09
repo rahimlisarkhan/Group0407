@@ -1,0 +1,29 @@
+@font-face {
+  font-family: RobotoRegular;
+  src: url(../fonts/Roboto/static/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url(../fonts/Roboto/static/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(../fonts/Roboto/static/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: PoppinsRegular;
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: PoppinsMedium;
+  src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: PoppinsBold;
+  src: url(../fonts/Poppins/Poppins-Bold.ttf);
+}
