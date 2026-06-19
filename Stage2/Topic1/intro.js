@@ -11,6 +11,13 @@ var c = age + accept;
 
 var d = age + 25;
 
+var age2 = age;
+
+age = 15;
+
+console.log(age);
+console.log(age2);
+
 var num1 = 20; // Integer
 var num2 = 20.5; // Float
 

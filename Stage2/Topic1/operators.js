@@ -111,7 +111,7 @@ var studentPoint = prompt('Enter your score');
 
 // // A | 90 - 100
 // // B | 70 - 89
-// // C | 50 - 69
+// // C | 50 - 69x
 // // F | 0 - 49
 // // ELSE - Xeta mesaji | Error | Edge case
 
