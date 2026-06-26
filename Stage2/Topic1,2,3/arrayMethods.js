@@ -28,4 +28,4 @@ var numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // var flatArray = numbers.flat(2);
 // numbers1.reverse();
 
-console.log(numbers1);
+// console.log(numbers1);
