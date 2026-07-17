@@ -296,6 +296,12 @@ var netice3 = renderMap(list, function (element) {
   return yeniNetice;
 });
 
+var netice4 = list.map(function (element) {
+  var yeniNetice = element + 3;
+
+  return yeniNetice;
+});
+
 console.log(netice);
 console.log(netice2);
 console.log(netice3);
