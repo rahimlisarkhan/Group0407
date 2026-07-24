@@ -93,20 +93,106 @@
 
 // console.log(netice);
 
-function A() {
-  function B() {
-    console.log('Test');
+// function A() {
+//   function B() {
+//     console.log('Test');
+//   }
+
+//   return B;
+// }
+
+// // let netice = A();
+
+// // netice();
+
+// let netice = A;
+
+// var c = netice();
+
+// c();
+
+// function innerFn() {
+//   let x = 10;
+
+//   function outerFn() {
+//     const y = 11;
+//     return y * x;
+//   }
+
+//   // return outerFn();
+//   const innerResult = outerFn();
+//   return innerResult;
+// }
+
+// let result = innerFn();
+
+// console.log(result); // ?????? Explain please step by step
+
+// REST & SPREAD
+
+// function A(a, b, c, d, f, e, g, h) {
+// function A(a, ...list) {
+function A(...data) {
+  // REST
+  console.log('data', data);
+
+  for (let el of data) {
+    console.log('el', el);
   }
 
-  return B;
+  // console.log('arguments', arguments);
 }
 
-// let netice = A();
+// A(1, 2, 3, 4, 5, 6);
+// A(1, 2, 3, 4);
+// A(1, 2);
 
-// netice();
+// Math.max(12, 5, 4, 34, 2);
 
-let netice = A;
+// SPREAD
+// const numbers = [1, 2, 3, 4, 5];
 
-var c = netice();
+// // const numbers2 = [100, 101, ...numbers];
+// const numbers2 = [...numbers];
 
-c();
+// // const result = Math.max(1, 2, 3, 4, 5);
+// const result = Math.max(...numbers); // (1,2,3,4,5)
+
+// console.log(result);
+
+// console.log('numbers2', numbers2);
+
+// Closure
+
+function calc() {
+  let x = 10;
+
+  function outerFn(interval) {
+    // x = x + interval;
+    x += interval;
+
+    return x;
+  }
+
+  return outerFn;
+}
+
+const ayxanCalc = calc();
+
+const alinaCalc = calc();
+
+// ayxanCalc(3);
+// ayxanCalc(3);
+// ayxanCalc(3);
+
+// const resultForAyxan = ayxanCalc(3);
+
+// console.log(resultForAyxan);
+
+alinaCalc(2);
+alinaCalc(3);
+alinaCalc(1);
+
+const resultForAlina = alinaCalc(2);
+
+console.log(resultForAlina);
