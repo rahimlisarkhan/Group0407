@@ -1,6 +1,7 @@
 //FIND
 const todoInput = document.querySelector('#todo-input');
 const saveBtn = document.querySelector('#save-btn');
+const clearBtn = document.querySelector('#clear-btn');
 const todoList = document.querySelector('#todo-list');
 const alertCheck = document.querySelector('#alertCheck');
 
@@ -31,6 +32,12 @@ saveBtn.addEventListener('click', function () {
   todoInput.value = ''; //reset value
 });
 
+clearBtn.addEventListener('click', function () {
+  window.location.reload();
+  // window.history.back();
+  // window.history.forward();
+});
+
 function renderList() {
   const newData = data
     .map((el) => {
@@ -54,3 +61,5 @@ const numbers2 = numbers.map((n) => {
 // todoList.innerHTML = numbers2.join('');
 
 // console.log('numbers2', numbers2);
+
+// PWA
