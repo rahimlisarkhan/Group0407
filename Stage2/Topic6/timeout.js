@@ -43,6 +43,8 @@ let sec = 0;
 
 const saveData = [];
 
+DEBOUNCE - asdasda;
+
 let intervalIndex;
 
 playBtn.addEventListener('click', function () {
