@@ -97,6 +97,8 @@
 // myObj.age = 20; // upt
 
 class Animal {
+  #MIN_INTERVAL = 1;
+
   constructor(name, year) {
     this.name = name;
     this.year = year;
@@ -108,20 +110,133 @@ class Animal {
 
   drinking() {
     console.log('Drinking...');
+    // this.#monitoring();
+  }
+
+  #monitoring() {
+    console.log('Monitoring...', this.#MIN_INTERVAL);
   }
 }
 
+// Inherantce
 class WaterAnimal extends Animal {
-  swiming() {
+  #refetch_limit = 4; // Abstrack
+
+  #dnt_count = 0;
+
+  constructor(name, year, dnt) {
+    super(name, year);
+
+    this.#dnt_count = dnt;
+  }
+
+  static processing(num) {
+    return 104 + num;
+  }
+
+  // Polimorism
+  swiming(type) {
     console.log(`${this.name} Swimming...`);
+
+    if (type == 'sirtUstu') {
+      this.drinking();
+    }
+
+    if (type == 'kepenek') {
+      // logic...
+    }
+  }
+
+  // Encapculation
+  get dntCode() {
+    return this.#dnt_count;
+  }
+
+  set dntCode(num) {
+    // validation...
+    if (num < 0) {
+      throw new Error('Error invalid num');
+    }
+
+    this.#dnt_count = num;
   }
 }
 
 const lionAnimal = new Animal('Lion', 7);
 
-const delfinAnimal = new WaterAnimal('Delfin', 2);
+const delfinAnimal = new WaterAnimal('Delfin', 2, 44);
 
-console.log(lionAnimal);
+// console.log(lionAnimal);
 console.log(delfinAnimal);
 
 delfinAnimal.swiming();
+
+const result = delfinAnimal.processing(2);
+
+const result = WaterAnimal.processing(2);
+
+// delfinAnimal.dntCode = 100;
+
+// console.log(delfinAnimal.dntCode);
+
+// delfinAnimal.#refetch_limit = 10;
+
+// console.log(delfinAnimal.#refetch_limit);
+
+class TextHelper {
+  // Capitalize the first letter of a string
+  static capitalize(str) {
+    if (!str) return '';
+    return str[0].toUpperCase() + str.slice(1);
+  }
+
+  // Make the whole string uppercase
+  static toUpper(str) {
+    return str ? str.toUpperCase() : '';
+  }
+
+  // Make the whole string lowercase
+  static toLower(str) {
+    return str ? str.toLowerCase() : '';
+  }
+
+  // Remove spaces from the start and end
+  static trim(str) {
+    return str ? str.trim() : '';
+  }
+
+  // Reverse the characters in a string
+  static reverse(str) {
+    if (!str) return '';
+    return str.split('').reverse().join('');
+  }
+
+  // Count the number of words
+  static wordCount(str) {
+    if (!str) return 0;
+    return str.trim().split(/\s+/).length;
+  }
+
+  // Shorten a string and add "..." if it is too long
+  static truncate(str, max) {
+    if (!str) return '';
+    if (str.length <= max) return str;
+    return str.slice(0, max) + '...';
+  }
+
+  // Convert "hello world" to "hello-world"
+  static slugify(str) {
+    if (!str) return '';
+    return str.toLowerCase().trim().replace(/\s+/g, '-');
+  }
+}
+
+// const textHelper = new TextHelper();
+
+// textHelper.truncate();
+
+TextHelper.truncate();
+
+const date = new Date('04-02-2026');
+
+const result = Date.now();
