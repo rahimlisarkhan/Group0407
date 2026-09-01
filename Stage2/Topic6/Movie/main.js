@@ -8,11 +8,9 @@ function showMovies() {
 
   getMovie
     .then((response) => {
-      console.log(response);
       renderList(response.data);
     })
     .catch((errorResponse) => {
-      console.log(errorResponse);
       alertContent.classList.remove('d-none');
       alertContent.innerHTML = errorResponse.message;
     })
@@ -39,7 +37,7 @@ function renderList(data) {
                 ${movie.title} <span class="badge text-bg-warning">${movie.imdb}</span>
               </h5>
               <p class="card-text">
-                ${TextHelper.truncate(movie.overview, 20)}
+                ${TextHelper.truncate(movie.overview, 30)}
               </p>
               <a href="${movie.watch_url}" target="_blank" class="btn btn-warning">Izle</a>
             </div>
@@ -49,6 +47,4 @@ function renderList(data) {
     .join('');
 
   contentList.innerHTML = newContentData;
-
-  console.log('newContentData', newContentData);
 }

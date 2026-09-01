@@ -11,10 +11,11 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous" />
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark p-5">
     <div class="container">
-      <div class="mb-3">
-        <input class="form-control" placeholder="Search" />
+      <div class="mb-3 d-flex gap-1">
+        <input class="form-control" placeholder="Search" id="searchInput" />
+        <button class="btn btn-warning btn-sm" id="searchBtn">Search</button>
       </div>
 
       <div class="row" id="contentList">
@@ -54,7 +55,8 @@
     </div>
 
     <script src="./utils/text.js"></script>
-    <script src="./data.js"></script>
-    <script src="./main.js"></script>
+    <!-- <script src="./data.js"></script> -->
+    <!-- <script src="./main.js"></script> -->
+    <script src="./main_api.js"></script>
   </body>
 </html>
