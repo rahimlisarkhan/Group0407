@@ -1,39 +1,39 @@
-const myPromise = new Promise((ugurlu, ugursuz) => {
-  // internet connection....
+// const myPromise = new Promise((ugurlu, ugursuz) => {
+//   // internet connection....
 
-  const isSuccess = true;
-  const serverData = {
-    result: [1, 2, 3, 4, 5],
-    message: 'OK',
-  };
+//   const isSuccess = true;
+//   const serverData = {
+//     result: [1, 2, 3, 4, 5],
+//     message: 'OK',
+//   };
 
-  if (isSuccess) {
-    ugurlu(serverData);
-  } else {
-    ugursuz('ERROR_Zahair');
-  }
-});
+//   if (isSuccess) {
+//     ugurlu(serverData);
+//   } else {
+//     ugursuz('ERROR_Zahair');
+//   }
+// });
 
-myPromise.then((data) => {
-  const divContent = document.querySelector('#content');
+// myPromise.then((data) => {
+//   const divContent = document.querySelector('#content');
 
-  divContent.innerHTML = data.result.map((el) => `<li>${el} </li>`).join('');
+//   divContent.innerHTML = data.result.map((el) => `<li>${el} </li>`).join('');
 
-  console.log('HerSey ugurludur...', data.result);
+//   console.log('HerSey ugurludur...', data.result);
 
-  //   A();
-});
+//   //   A();
+// });
 
-myPromise.catch((error) => {
-  console.log('Ugursuzdur', error);
+// myPromise.catch((error) => {
+//   console.log('Ugursuzdur', error);
 
-  alert('Xeta bas verdi yeniden deneyin');
-  //   B();
-});
+//   alert('Xeta bas verdi yeniden deneyin');
+//   //   B();
+// });
 
-myPromise.finally(() => {
-  console.log('Final');
-});
+// myPromise.finally(() => {
+//   console.log('Final');
+// });
 
 // function getMovies() {
 //   // ...data
