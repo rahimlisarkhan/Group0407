@@ -12,7 +12,8 @@ searchBtn.addEventListener('click', function () {
 });
 
 function showMovies(searchTitle) {
-  if (!searchTitle.trim()) {
+  // Validation
+  if (searchTitle.trim() == '') {
     alert('Invalid search value!');
     return;
   }
@@ -23,13 +24,15 @@ function showMovies(searchTitle) {
 
   const getMovie = fetch(
     `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`,
-  );
+  ); // Promise
 
   getMovie
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      console.log('data', data);
+
       renderList(data.Search);
     })
     .catch((errorResponse) => {
@@ -46,11 +49,12 @@ function renderList(list) {
 
   console.log('list', list);
 
-  const newContentData = !list
-    ? "<h2 class='text-light text-center'> Empty data </h2>"
-    : list
-        .map((movie) => {
-          return `<div class="col-lg-3">
+  const newContentData =
+    list == undefined
+      ? "<h2 class='text-light text-center'> Empty data </h2>"
+      : list
+          .map((movie) => {
+            return `<div class="col-lg-3">
           <div class="card">
             <img
               src="${movie.Poster}"
@@ -66,8 +70,8 @@ function renderList(list) {
             </div>
           </div>
         </div>`;
-        })
-        .join('');
+          })
+          .join('');
 
   contentList.innerHTML = newContentData;
 }
