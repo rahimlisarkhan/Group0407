@@ -1,3 +1,9 @@
+'use strict';
+
+// const a = 10;
+
+// console.log('a', a);
+
 const loadingContent = document.querySelector('#loadingContent');
 const alertContent = document.querySelector('#alertContent');
 const searchBtn = document.querySelector('#searchBtn');
@@ -11,7 +17,40 @@ searchBtn.addEventListener('click', function () {
   showMovies(searchInput.value);
 });
 
-function showMovies(searchTitle) {
+// function showMovies(searchTitle) {
+//   // Validation
+//   if (searchTitle.trim() == '') {
+//     alert('Invalid search value!');
+//     return;
+//   }
+
+//   //RESET
+//   loadingContent.classList.remove('d-none');
+//   alertContent.classList.add('d-none');
+
+//   const getMovie = fetch(
+//     `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`,
+//   ); // Promise
+
+//   getMovie
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log('data', data);
+
+//       renderList(data.Search);
+//     })
+//     .catch((errorResponse) => {
+//       alertContent.classList.remove('d-none');
+//       alertContent.innerHTML = errorResponse.message;
+//     })
+//     .finally(() => {
+//       loadingContent.classList.add('d-none'); // Loading logic
+//     });
+// }
+
+async function showMovies(searchTitle) {
   // Validation
   if (searchTitle.trim() == '') {
     alert('Invalid search value!');
@@ -22,26 +61,41 @@ function showMovies(searchTitle) {
   loadingContent.classList.remove('d-none');
   alertContent.classList.add('d-none');
 
-  const getMovie = fetch(
-    `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`,
-  ); // Promise
+  try {
+    const getMovie = fetch(
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`,
+    ); // Promise
 
-  getMovie
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log('data', data);
+    const response = await getMovie;
 
-      renderList(data.Search);
-    })
-    .catch((errorResponse) => {
-      alertContent.classList.remove('d-none');
-      alertContent.innerHTML = errorResponse.message;
-    })
-    .finally(() => {
-      loadingContent.classList.add('d-none'); // Loading logic
-    });
+    const data = await response.json();
+
+    renderList(data.Search);
+
+    console.log('data', data);
+  } catch (errorResponse) {
+    alertContent.classList.remove('d-none');
+    alertContent.innerHTML = errorResponse.message;
+  } finally {
+    loadingContent.classList.add('d-none'); // Loading logic
+  }
+
+  // getMovie
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log('data', data);
+
+  //     renderList(data.Search);
+  //   })
+  //   .catch((errorResponse) => {
+  //     alertContent.classList.remove('d-none');
+  //     alertContent.innerHTML = errorResponse.message;
+  //   })
+  //   .finally(() => {
+  //     loadingContent.classList.add('d-none'); // Loading logic
+  //   });
 }
 
 function renderList(list) {
@@ -75,3 +129,18 @@ function renderList(list) {
 
   contentList.innerHTML = newContentData;
 }
+
+// try {
+//   a = 5;
+
+//   let a;
+
+//   console.log(a);
+// } catch (err) {
+//   console.log(err);
+// } finally {
+// }
+
+// // ...
+
+// console.log('davam edir...');
