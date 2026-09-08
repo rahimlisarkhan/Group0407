@@ -64,7 +64,12 @@ async function showMovies(searchTitle) {
   try {
     const getMovie = fetch(
       `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`,
-    ); // Promise
+      {
+        method: 'GET',
+        headers: {},
+        body: {},
+      },
+    ); // Promise GET - Read
 
     const response = await getMovie;
 
