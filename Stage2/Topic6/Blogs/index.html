@@ -14,8 +14,10 @@
   </head>
   <body class="bg-light">
     <div class="container py-5">
-      <h1 class="mb-4">Blogs</h1>
-
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="mb-4">Blogs</h1>
+        <a class="btn btn-secondary" href="./pages/create.html">Create</a>
+      </div>
       <div id="loading" class="text-center py-5">
         <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
@@ -24,7 +26,9 @@
 
       <div id="alert" class="alert alert-danger d-none" role="alert"></div>
 
-      <div id="blogs-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+      <div
+        id="blogs-list"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
     </div>
 
     <!-- IMPORTs -->
