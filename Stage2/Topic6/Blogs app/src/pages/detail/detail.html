@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous" />
+    <title>Blog Detail</title>
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <a href="../../../index.html" class="btn btn-outline-secondary mb-4"
+        >&larr; Back</a
+      >
+
+      <div id="loading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div id="alert" class="alert alert-danger d-none" role="alert"></div>
+
+      <div id="blog-detail" class="card shadow-sm mb-4 d-none">
+        <div class="card-body">
+          <h1 id="blog-title" class="card-title h3 text-capitalize"></h1>
+          <span id="blog-id" class="badge text-bg-secondary mb-3"></span>
+          <p id="blog-body" class="card-text"></p>
+          <a
+            id="blog-edit"
+            href="../create/create.html"
+            class="btn btn-success btn-sm">
+            Edit
+          </a>
+          <button id="blog-remove" class="btn btn-danger btn-sm">
+            <span
+              id="remove-spinner"
+              class="spinner-border spinner-border-sm d-none"
+              aria-hidden="true"></span>
+            <span id="remove-text">Delete</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="h4 mb-3">Comments</h2>
+      <div id="comments-list" class="row row-cols-1 g-3"></div>
+    </div>
+
+    <script src="../../api/blog.js"></script>
+    <script src="./detail.js"></script>
+  </body>
+</html>
