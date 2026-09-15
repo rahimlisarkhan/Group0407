@@ -7,20 +7,20 @@ function createBlogCard(blog) {
   col.className = 'col';
 
   col.innerHTML = `
-    <div class="card h-100 shadow-sm">
+    <a class="card h-100 shadow-sm" href="./src/pages/detail/detail.html?id=${blog.id}">
       <div class="card-body">
         <h5 class="card-title text-capitalize">${blog.title}</h5>
         <p class="card-text text-muted">${blog.body}</p>
       </div>
-    </div>
+    </a>
   `;
 
-  col.style.cursor = 'pointer';
+  // col.style.cursor = 'pointer';
 
-  col.addEventListener('click', function () {
-    // redirect to detail page with id
-    window.location.href = `./src/pages/detail/detail.html?id=${blog.id}`;
-  });
+  // col.addEventListener('click', function () {
+  //   // redirect to detail page with id
+  //   window.location.href = `./src/pages/detail/detail.html?id=${blog.id}`;
+  // });
 
   return col;
 }
@@ -29,7 +29,9 @@ function renderBlogs(blogs) {
   blogsListEl.innerHTML = '';
 
   blogs.forEach(function (blog) {
-    blogsListEl.append(createBlogCard(blog));
+    const newElementCard = createBlogCard(blog);
+
+    blogsListEl.append(newElementCard);
   });
 }
 
