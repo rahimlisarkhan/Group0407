@@ -1,10 +1,13 @@
 const baseURL = 'https://blog-api-t6u0.onrender.com';
 
 async function getBlogs() {
+  // const apiKey = localStorage.getItem('app_key');
+
   const response = await fetch(baseURL + '/posts', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      // Auth: apiKey,
     },
   });
 
