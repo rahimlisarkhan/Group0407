@@ -1,0 +1,13 @@
+{
+    "results": [
+        {
+            "name": "Product1",
+            "price": 45
+        },
+        {
+            "name": "Product2",
+            "price": 42
+        }
+    ],
+    "status": 200
+}
