@@ -3,51 +3,69 @@
 // import { MemberList as MemberListAida } from './common/components/MemberList';
 // import { MemberList } from './common/components/MemberList';
 
+import { pokemonData } from './mock/pokemon';
+
 // import productData from './mock/products.json';
 
 // import Hero from './common/components/Hero';
 // import { countries } from './common/constants/country';
-import { Child } from './common/components/Child';
 
 function App() {
   // const addData = {
   //   str: 'str 1',
   // };
 
-  const sayHello = (childangelenData) => {
-    console.log('Hello!', childangelenData);
+  function generateTeams() {
+    console.log(pokemonData);
 
-    const sum = 22 + childangelenData;
+    const team1 = [...pokemonData];
 
-    alert(sum);
-  };
+    const team2 = [];
+
+    while (team2 < team1) {
+      console.log('intro...');
+
+      const randomElementIndex = Math.floor(Math.random() * pokemonData.length);
+
+      const silinenEl = team1.splice(randomElementIndex, 1);
+
+      team2.push(silinenEl[0]);
+    }
+
+    const team1Score1 = team1.reduce(
+      (sum, item) => sum + item.base_experience,
+      0,
+    );
+    const team1Score2 = team2.reduce(
+      (sum, item) => sum + item.base_experience,
+      0,
+    );
+
+    return {
+      team1,
+      team2,
+      team1Score1,
+      team1Score2,
+    };
+  }
+
+  const doneData = generateTeams();
+
+  console.log('doneData', doneData);
 
   return (
     <section>
-      <Child sayHello={sayHello} />
-      {/* <Hero data={countries}>
-        <h2>Salam</h2>
-        <h2>Salam</h2>
-        <h2>Salam</h2>
-        <h2>Salam</h2>
-        <h2>Salam</h2>
-        <h2>Salam</h2>
-      </Hero> */}
-
-      {/* <Header />
-      <CalendarHeader />
-      <h1>Hello React</h1>
-
-      <hr />
-      <MemberList
-        age={12}
-        fullname="John doe"
-        siyahi={[1, 2, 3, 4]}
-        address={addData}
+      {/* <PokemonTeam
+        isWinner={doneData.team1Score1 > doneData.team1Score2}
+        score={doneData.team1Score1}
+        pokemons={doneData.team1}
       />
-      <hr />
-
-      <MemberList age={12} siyahi={[1, 2, 3, 4]} address={addData} /> */}
+      <h1>VS</h1>
+      <PokemonTeam
+        isWinner={doneData.team1Score1 < doneData.team1Score2}
+        score={doneData.team1Score2}
+        pokemons={doneData.team2}
+      /> */}
     </section>
   );
 }

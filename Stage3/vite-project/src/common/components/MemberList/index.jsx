@@ -5,24 +5,22 @@ import { Button } from 'react-bootstrap';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 
-export function MemberList(props) {
-  console.log('MemberList props:', props);
+export function MemberList({ address, fullname = 'Default name', age }) {
+  const addressDatasi = address.str;
 
-  const addressDatasi = props.address.str;
-
-  const nameData = props.fullname || 'Default name';
+  // const nameData = props.fullname || 'Default name';
 
   return (
     <div>
       <hr />
       <div>
-        <h2>List: {nameData}</h2>
+        <h2>List: {fullname}</h2>
         <MemberItem />
         <MemberItem />
         <MemberItem />
         <MemberItem />
         <Button variant="danger">
-          {addressDatasi} Send :{props.age}
+          {addressDatasi} Send :{age}
         </Button>
       </div>
       <Dropdown>

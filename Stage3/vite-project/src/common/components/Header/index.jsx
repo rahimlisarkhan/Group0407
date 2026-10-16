@@ -16,7 +16,7 @@ function Header() {
     <header className={styles.header}>
       {' '}
       HEADER: {result}
-      <Button text="Sign in" color="black" />
+      <Button text="Sign in" colo />
     </header>
   );
 }
