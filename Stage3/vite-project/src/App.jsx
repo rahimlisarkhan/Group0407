@@ -3,6 +3,7 @@
 // import { MemberList as MemberListAida } from './common/components/MemberList';
 // import { MemberList } from './common/components/MemberList';
 
+import Todo from './common/components/Todo';
 import { pokemonData } from './mock/pokemon';
 
 // import productData from './mock/products.json';
@@ -49,12 +50,11 @@ function App() {
     };
   }
 
-  const doneData = generateTeams();
-
-  console.log('doneData', doneData);
+  // const doneData = generateTeams();
 
   return (
     <section>
+      <Todo />
       {/* <PokemonTeam
         isWinner={doneData.team1Score1 > doneData.team1Score2}
         score={doneData.team1Score1}
