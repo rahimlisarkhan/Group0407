@@ -3,8 +3,9 @@
 // import { MemberList as MemberListAida } from './common/components/MemberList';
 // import { MemberList } from './common/components/MemberList';
 
-import Todo from './common/components/Todo';
-import { pokemonData } from './mock/pokemon';
+import { ProductApp } from './common/components/ProductApp';
+// import Todo from './common/components/Todo';
+// import { pokemonData } from './mock/pokemon';
 
 // import productData from './mock/products.json';
 
@@ -16,45 +17,46 @@ function App() {
   //   str: 'str 1',
   // };
 
-  function generateTeams() {
-    console.log(pokemonData);
+  // function generateTeams() {
+  //   console.log(pokemonData);
 
-    const team1 = [...pokemonData];
+  //   const team1 = [...pokemonData];
 
-    const team2 = [];
+  //   const team2 = [];
 
-    while (team2 < team1) {
-      console.log('intro...');
+  //   while (team2 < team1) {
+  //     console.log('intro...');
 
-      const randomElementIndex = Math.floor(Math.random() * pokemonData.length);
+  //     const randomElementIndex = Math.floor(Math.random() * pokemonData.length);
 
-      const silinenEl = team1.splice(randomElementIndex, 1);
+  //     const silinenEl = team1.splice(randomElementIndex, 1);
 
-      team2.push(silinenEl[0]);
-    }
+  //     team2.push(silinenEl[0]);
+  //   }
 
-    const team1Score1 = team1.reduce(
-      (sum, item) => sum + item.base_experience,
-      0,
-    );
-    const team1Score2 = team2.reduce(
-      (sum, item) => sum + item.base_experience,
-      0,
-    );
+  //   const team1Score1 = team1.reduce(
+  //     (sum, item) => sum + item.base_experience,
+  //     0,
+  //   );
+  //   const team1Score2 = team2.reduce(
+  //     (sum, item) => sum + item.base_experience,
+  //     0,
+  //   );
 
-    return {
-      team1,
-      team2,
-      team1Score1,
-      team1Score2,
-    };
-  }
+  //   return {
+  //     team1,
+  //     team2,
+  //     team1Score1,
+  //     team1Score2,
+  //   };
+  // }
 
   // const doneData = generateTeams();
 
   return (
     <section>
-      <Todo />
+      <ProductApp />
+      {/* <Todo /> */}
       {/* <PokemonTeam
         isWinner={doneData.team1Score1 > doneData.team1Score2}
         score={doneData.team1Score1}
