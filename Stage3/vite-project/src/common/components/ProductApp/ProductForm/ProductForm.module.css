@@ -1,0 +1,110 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+  margin: 24px 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #eceef2;
+  border-radius: 16px;
+}
+
+.heading {
+  margin: 0;
+  padding-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1f26;
+  border-bottom: 1px solid #eceef2;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a4f5c;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #1c1f26;
+  background: #f5f6f8;
+  border: 1px solid #eceef2;
+  border-radius: 10px;
+  outline: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #8a8f9c;
+}
+
+.input:focus {
+  background: #fff;
+  border-color: #2f6bff;
+  box-shadow: 0 0 0 3px #eaf0ff;
+}
+
+.textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4f5c;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #2f6bff;
+  cursor: pointer;
+}
+
+.submit {
+  margin-top: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #2f6bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.submit:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

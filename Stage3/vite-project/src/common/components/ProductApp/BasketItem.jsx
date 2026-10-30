@@ -1,6 +1,14 @@
 import styles from './Basket.module.css';
 
-export const BasketItem = ({ product }) => {
+export const BasketItem = ({
+  product,
+  onIncrementProduct,
+  onDecrementProduct,
+}) => {
+  const quantity = product?.quantity ?? 1;
+
+  const stockCount = 7;
+
   return (
     <div className={styles.item}>
       <div className={styles.itemImageBox}>
@@ -16,7 +24,31 @@ export const BasketItem = ({ product }) => {
         <span className={styles.itemBrand}>{product.brand}</span>
       </div>
 
-      <span className={styles.itemPrice}>${product.price}</span>
+      <div className={styles.itemFooter}>
+        <div className={styles.stepper}>
+          <button
+            className={styles.stepperButton}
+            aria-label="Decrease quantity"
+            onClick={() => onDecrementProduct(product)}
+            disabled={quantity == 1}>
+            −
+          </button>
+
+          <span className={styles.stepperValue}>{quantity}</span>
+
+          <button
+            className={styles.stepperButton}
+            aria-label="Increase quantity"
+            onClick={() => onIncrementProduct(product)}
+            disabled={quantity >= stockCount}>
+            +
+          </button>
+        </div>
+
+        <span className={styles.itemPrice}>
+          $ {product.price * product.quantity}
+        </span>
+      </div>
     </div>
   );
 };

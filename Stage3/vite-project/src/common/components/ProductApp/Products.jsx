@@ -1,8 +1,7 @@
-import { productsData } from '../../../mock/productData';
 import { ProductCard } from './ProductCard';
 import styles from './Products.module.css';
 
-export const Products = ({ basketData, onSelectProduct }) => {
+export const Products = ({ basketData, productsData, onSelectProduct }) => {
   return (
     <div className={styles.container}>
       {productsData.map((product) => {
@@ -13,7 +12,7 @@ export const Products = ({ basketData, onSelectProduct }) => {
             key={`product-id-${product.id}`}
             product={product}
             isHasBasket={isHasBasket}
-            onClickProduct={() => onSelectProduct(product)}
+            onSelectProduct={onSelectProduct}
           />
         );
       })}

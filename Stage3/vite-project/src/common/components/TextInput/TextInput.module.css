@@ -1,0 +1,24 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.input {
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: blue;
+}
+
+.input:disabled {
+  opacity: 0.7;
+}

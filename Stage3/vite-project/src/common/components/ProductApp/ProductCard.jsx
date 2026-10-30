@@ -1,7 +1,7 @@
 import { classMerge } from '../../helpers/classMerge';
 import styles from './Products.module.css';
 
-export const ProductCard = ({ product, isHasBasket, onClickProduct }) => {
+export const ProductCard = ({ product, isHasBasket, onSelectProduct }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageBox}>
@@ -37,7 +37,7 @@ export const ProductCard = ({ product, isHasBasket, onClickProduct }) => {
               isHasBasket && styles.removeBtn,
             )}
             disabled={!product.stock}
-            onClick={onClickProduct}>
+            onClick={() => onSelectProduct(product)}>
             {isHasBasket ? 'Remove' : 'Add'}
           </button>
         </div>
