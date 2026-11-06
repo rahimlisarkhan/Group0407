@@ -3,7 +3,8 @@
 // import { MemberList as MemberListAida } from './common/components/MemberList';
 // import { MemberList } from './common/components/MemberList';
 
-import { ProductApp } from './common/components/ProductApp';
+import { LifeApp } from './common/components/LifeApp';
+// import { ProductApp } from './common/components/ProductApp';
 // import Todo from './common/components/Todo';
 // import { pokemonData } from './mock/pokemon';
 
@@ -55,7 +56,8 @@ function App() {
 
   return (
     <section>
-      <ProductApp />
+      {/* <ProductApp /> */}
+      <LifeApp />
       {/* <Todo /> */}
       {/* <PokemonTeam
         isWinner={doneData.team1Score1 > doneData.team1Score2}
