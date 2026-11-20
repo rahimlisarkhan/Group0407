@@ -1,7 +1,7 @@
-export const successHandler = (data) => ({
+export const successHandler = (response) => ({
   result: true,
-  status: data.status,
-  data: data.data,
+  status: response.status,
+  data: response.data,
 });
 
 export const errorHandler = (err) => ({

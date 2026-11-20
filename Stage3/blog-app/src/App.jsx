@@ -1,19 +1,11 @@
-import { BlogsPage } from './features/blog/pages';
-// import { BlogCreate } from './features/blog/pages/create';
-// import { BlogDetail } from './features/blog/pages/detail';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './routes';
 
 function App() {
   return (
-    <>
-      {/* HOME ROUTES */}
-
-      {/* BLOGS ROUTES */}
-      <BlogsPage />
-      {/* <BlogCreate />
-      <BlogDetail /> */}
-
-      {/* SETTING ROUTES */}
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 

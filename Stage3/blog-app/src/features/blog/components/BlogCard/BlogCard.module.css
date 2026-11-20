@@ -42,3 +42,30 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.button {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4f46e5;
+  background: #eef2ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #e0e7ff;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

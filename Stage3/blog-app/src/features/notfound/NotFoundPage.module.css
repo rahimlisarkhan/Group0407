@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.code {
+  margin: 0;
+  font-size: 72px;
+  color: #4f46e5;
+}
+
+.text {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.link {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: #4338ca;
+}
