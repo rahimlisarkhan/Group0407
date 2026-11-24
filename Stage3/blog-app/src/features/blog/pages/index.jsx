@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getBlogs } from '../services/blog.api';
 import { BlogCard } from '../components/BlogCard';
 import { ContainerList } from '../../../shared/components/ContainerList';
 import { ErrorMessage } from '../../../shared/components/ErrorMessage';
 import { Loading } from '../../../shared/components/Loading';
-import { Header } from '../../../shared/components/Header';
 import { Button } from '../../../shared/components/Button';
 import { useHandleBoolean } from '../../../shared/hooks/useHandleBoolean';
 import { useGetData } from '../../../shared/hooks/useGetData';
 import styles from './BlogsPage.module.css';
+import { Layout } from '../../../shared/components/Layout';
 
 export const BlogsPage = () => {
   // const [blogs, setBlogs] = useState([]);
@@ -44,39 +43,41 @@ export const BlogsPage = () => {
   // }, []);
 
   return (
-    <div>
-      <Header />
-
-      <div className={styles.top}>
-        <h2>Blog List</h2>
-
-        <Button onClick={() => navigate('/meqale/yarat')}>+ Create</Button>
-      </div>
-
+    <Layout title="Blog">
       <div>
-        <button onClick={handleOpen}>Məlumatı aç</button>
-        <button onClick={handleClose}>Məlumatı bağla</button>
-        <button onClick={handleToggle}>{show ? 'Gizlət' : 'Göstər'}</button>
+        <div className={styles.top}>
+          <h2>Blog List</h2>
+
+          <Button onClick={() => navigate('/meqale/yarat')}>+ Create</Button>
+        </div>
+
+        <div>
+          <button onClick={handleOpen}>Məlumatı aç</button>
+          <button onClick={handleClose}>Məlumatı bağla</button>
+          <button onClick={handleToggle}>{show ? 'Gizlət' : 'Göstər'}</button>
+        </div>
+
+        {show && <p>Cəmi {data.length} blog tapıldı.</p>}
+
+        <Loading loading={loading} />
+        <ErrorMessage message={error} />
+
+        <ContainerList>
+          {data.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              id={blog.id}
+              title={blog.title}
+              body={blog.body}
+              onReadMore={function () {
+                navigate(`/meqale/${blog.id}`);
+              }}
+            />
+          ))}
+        </ContainerList>
       </div>
-
-      {show && <p>Cəmi {data.length} blog tapıldı.</p>}
-
-      <Loading loading={loading} />
-      <ErrorMessage message={error} />
-
-      <ContainerList>
-        {data.map((blog) => (
-          <BlogCard
-            key={blog.id}
-            id={blog.id}
-            title={blog.title}
-            body={blog.body}
-            onReadMore={function () {
-              navigate(`/meqale/${blog.id}`);
-            }}
-          />
-        ))}
-      </ContainerList>
-    </div>
+    </Layout>
   );
 };
+
+export default BlogsPage;

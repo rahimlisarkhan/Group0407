@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export const useGetData = (getCallback) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
@@ -24,7 +24,7 @@ export const useGetData = (getCallback) => {
     }
 
     getData();
-  }, [getCallback]);
+  }, []);
 
   return {
     data,

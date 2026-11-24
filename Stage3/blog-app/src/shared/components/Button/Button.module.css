@@ -28,3 +28,9 @@
   background: #4f46e5;
   color: #fff;
 }
+
+.primary:disabled,
+.outline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

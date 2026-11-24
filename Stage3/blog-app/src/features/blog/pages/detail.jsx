@@ -1,27 +1,46 @@
-import { useParams } from 'react-router-dom';
-import { Header } from '../../../shared/components/Header';
-import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getBlogId } from '../services/blog.api';
+import { Layout } from '../../../shared/components/Layout';
+import { Loading } from '../../../shared/components/Loading';
+import { Button } from '../../../shared/components/Button';
+import { useGetData } from '../../../shared/hooks/useGetData';
+import { NotFoundPage } from '../../notfound';
 
 export const BlogDetail = () => {
-  // useParams — URL-dəki dinamik hissəni (/meqale/:meqaleNomresi) oxuyur
+  // useParams — URL-dəki dinamik hissəni (/meqale/:blogId) oxuyur
   const { blogId } = useParams();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log('blogId', blogId);
+  const { data: blog, loading, error } = useGetData(() => getBlogId(blogId));
 
-    async function getData() {
-      // const response = await fetch(`/api/blogs-data/${blogId}`);
-      // pass data to state logic
-    }
+  if (loading) {
+    return (
+      <Layout title="Blog detail">
+        <Loading loading />
+      </Layout>
+    );
+  }
 
-    getData();
-  }, [blogId]);
+  if (error || !blog?.id) {
+    return (
+      <Layout title="Blog detail">
+        <NotFoundPage />
+      </Layout>
+    );
+  }
 
   return (
-    <div>
-      <Header />
+    <Layout title="Blog detail">
+      <Button variant="outline" onClick={() => navigate('/meqale')}>
+        ← Bloglara qayıt
+      </Button>
 
-      <h2>BlogDetail {blogId} </h2>
-    </div>
+      <article>
+        <h1>{blog.title}</h1>
+        <p>{blog.body}</p>
+      </article>
+    </Layout>
   );
 };
+
+export default BlogDetail;

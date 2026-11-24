@@ -1,0 +1,1 @@
+export { SettingLayout } from './SettingLayout';
