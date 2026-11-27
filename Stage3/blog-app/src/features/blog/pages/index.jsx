@@ -10,21 +10,30 @@ import { useGetData } from '../../../shared/hooks/useGetData';
 import styles from './BlogsPage.module.css';
 import { Layout } from '../../../shared/components/Layout';
 import { useGlobalStore } from '../../../shared/store/global/useGlobalStore';
+import { useEffect } from 'react';
 
 export const BlogsPage = () => {
   // const [blogs, setBlogs] = useState([]);
   // const [error, setError] = useState('');
   // const [loading, setLoading] = useState(false);
 
-  const { toggleTheme, theme } = useGlobalStore();
+  const { toggleTheme, theme, setBlogs } = useGlobalStore();
 
   const isDark = theme === 'dark';
 
   const navigate = useNavigate();
 
-  const { data, loading, error } = useGetData(getBlogs);
+  const { data, loading, error } = useGetData(getBlogs, {
+    onSuccess: (blogData) => {
+      setBlogs(blogData);
+    },
+  });
   // const { data:products, loading:productLoading, errorProduct } = useGetData(getProducts);
   const { show, handleOpen, handleClose, handleToggle } = useHandleBoolean();
+
+  // useEffect(() => {
+  //   setBlogs(data);
+  // }, [data]);
 
   // useEffect(() => {
   //   async function getData() {

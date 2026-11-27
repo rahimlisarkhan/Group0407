@@ -2,7 +2,12 @@ import { Layout } from '../../../shared/components/Layout';
 import { useGlobalStore } from '../../../shared/store/global/useGlobalStore';
 
 const HomePage = () => {
-  const { toggleTheme, theme } = useGlobalStore();
+  const { toggleTheme, theme, blogs } = useGlobalStore();
+  // const value = useGlobalStore();
+
+  console.log('blogs', blogs);
+
+  // const { data, loading, error } = useGetData(getBlogs);
 
   const isDark = theme === 'dark';
 

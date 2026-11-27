@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useGetData = (getCallback) => {
+export const useGetData = (getCallback, options) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -12,6 +12,7 @@ export const useGetData = (getCallback) => {
 
       if (response.result) {
         // success logic...
+        options?.onSuccess?.(response.data);
         setData(response.data);
         setLoading(false);
 
