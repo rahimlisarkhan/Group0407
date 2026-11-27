@@ -1,5 +1,11 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import { FiArrowLeft, FiFeather, FiFileText, FiHome, FiSettings } from 'react-icons/fi';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import {
+  FiArrowLeft,
+  FiFeather,
+  FiFileText,
+  FiHome,
+  FiSettings,
+} from 'react-icons/fi';
 import { cls } from '../../utils/cls';
 import styles from './Layout.module.css';
 
@@ -14,6 +20,10 @@ const menu = [
 export const Layout = ({ title, small = false, children }) => {
   const navigate = useNavigate();
 
+  // const { pathname } = useLocation();
+
+  // const isCalendarPage = pathname == '/calendar';
+
   return (
     <div className={styles.layout}>
       <aside className={cls(styles.sidebar, small && styles.small)}>
@@ -22,6 +32,8 @@ export const Layout = ({ title, small = false, children }) => {
           {!small && 'BlogApp'}
         </span>
 
+        {/* {isCalendarPage && <CalendarComponent/>} */}
+
         <nav className={styles.nav}>
           {menu.map(({ to, label, icon: Icon }) => (
             <NavLink
@@ -29,8 +41,9 @@ export const Layout = ({ title, small = false, children }) => {
               to={to}
               end={to === '/'}
               title={small ? label : undefined}
-              className={({ isActive }) => cls(styles.link, isActive && styles.active)}
-            >
+              className={({ isActive }) =>
+                cls(styles.link, isActive && styles.active)
+              }>
               <Icon className={styles.icon} />
               {!small && <span>{label}</span>}
             </NavLink>

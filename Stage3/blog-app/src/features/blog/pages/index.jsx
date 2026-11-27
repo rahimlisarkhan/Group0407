@@ -9,11 +9,16 @@ import { useHandleBoolean } from '../../../shared/hooks/useHandleBoolean';
 import { useGetData } from '../../../shared/hooks/useGetData';
 import styles from './BlogsPage.module.css';
 import { Layout } from '../../../shared/components/Layout';
+import { useGlobalStore } from '../../../shared/store/global/useGlobalStore';
 
 export const BlogsPage = () => {
   // const [blogs, setBlogs] = useState([]);
   // const [error, setError] = useState('');
   // const [loading, setLoading] = useState(false);
+
+  const { toggleTheme, theme } = useGlobalStore();
+
+  const isDark = theme === 'dark';
 
   const navigate = useNavigate();
 
@@ -44,11 +49,21 @@ export const BlogsPage = () => {
 
   return (
     <Layout title="Blog">
-      <div>
+      <div
+        style={{
+          background: isDark ? '#1e1e1e' : '#ffffff',
+          color: isDark ? '#ffffff' : '#1e1e1e',
+          padding: 20,
+        }}>
         <div className={styles.top}>
           <h2>Blog List</h2>
 
-          <Button onClick={() => navigate('/meqale/yarat')}>+ Create</Button>
+          <div>
+            <button onClick={toggleTheme}>
+              {isDark ? 'Light mode' : 'Dark mode'}
+            </button>
+            <Button onClick={() => navigate('/meqale/yarat')}>+ Create</Button>
+          </div>
         </div>
 
         <div>

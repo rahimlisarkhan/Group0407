@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../shared/components/Button';
+import { useGlobalStore } from '../../../shared/store/global/useGlobalStore';
 import styles from './Auth.module.css';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useGlobalStore();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +14,17 @@ export const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // request POST logic...
+
     console.log('Login:', { email, password });
+
+    const userData = {
+      id: 23213,
+      fullname: 'JohnDoe',
+      licence: 'PRO',
+    };
+
+    login(userData);
 
     navigate('/');
   };

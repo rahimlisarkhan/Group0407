@@ -11,7 +11,10 @@ export const instanceAxios = axios.create({
 
 // TEST: currentBranch yoxdursa random bir deyer yaz (sonra silinecek)
 if (!localStorage.getItem('currentBranch')) {
-  localStorage.setItem('currentBranch', String(Math.floor(Math.random() * 1000) + 1));
+  localStorage.setItem(
+    'currentBranch',
+    String(Math.floor(Math.random() * 1000) + 1),
+  );
 }
 
 // Add a request interceptor
